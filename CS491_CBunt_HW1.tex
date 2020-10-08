@@ -34,6 +34,13 @@
 \usepackage[shortlabels]{enumitem}
 \usepackage{indentfirst}
 \usepackage{hyperref}
+\newcommand*{\img}[2]{
+  \begin{figure}[!ht]
+    \flushleft
+    \includegraphics[width=0.8\linewidth]{#1.JPG}
+    \caption{\bf #2}
+    \label{fig:#1}
+      \end{figure}}
 
 \renewcommand{\thesubsection}{\thesection.\alph{subsection}}
 
