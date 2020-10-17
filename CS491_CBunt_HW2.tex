@@ -73,66 +73,56 @@
  \noindent\rule{7in}{2.8pt}
 
  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
- % Problem 1
+ % Problem A
  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
- \begin{problem}{1}
+ \begin{problem}{A}
    Written Exercises \\
-   Provide 3 references to computer security that you find in the non-technical space.  Provide or describe what is said.  For each, say how it relates to any of the CIA:  confidentiality, integrity, availability.  For each, say how it relates to any of the STRIDE categories of threats.
-   \begin{enumerate}[label=\alph*.]
-   \item Examples might be fiction, tv shows, movies, magazines, blogs, even news.
-   \item The reference may be technically correct or incorrect, or maybe you donâ€™t know which.
-   \item Include the source â€“ movie name and year;  tv name, year, seasons\#, episode\#; URL, etc.  If possible, give a link.  A link to an entire movie is NOT useful although your graders would probably enjoy watching all of those movies.
+   \begin{enumerate}[label=\arabic*.]
+   \item
+     What is the difference between private and public key cryptography? For each, give one scenario where we might use it today.
+     
+   \item
+     Given a key with 64 bits:
+     \begin{enumerate}[label=\alph*.]  
+     \item
+       how many trials of exhaustive search must be done before success is expected?
+     \item
+       Assume each exhaustive search trial requires a total of 16 floating point operations. Is a 64 bit key length a reasonable choice given today's most powerful supercomputer?
+     \end{enumerate}
    \end{enumerate}
  \end{problem}
 
  \begin{response}
-   \begin{enumerate}[label=\arabic*)]
-   \item Target Data Breach
-     \begin{enumerate}[label=\alph*.]
-     \item In late 2013 the credit card and personal data of 110 Million customers was stolen.
-     \item How does this relate?
-       \begin{itemize}
-       \item[CIA:] The confidentiality of this data was compromised when it was made available to unauthorized people.
-       \item[STRIDE:] While this was and made possible via tampering, it is an information disclosure at the heart of this event.
-       \end{itemize}
-     \item Wikipedia: \href{https://en.wikipedia.org/wiki/History_of_Target_Corporation#2013_security_breach}{Target Data breach}
-     \end{enumerate}
-   \item WannaCry
-     \begin{enumerate}[label=\alph*.]
-     \item The EternalBlue exploit allowed WannaCry to infect unpatched older machines to encrypt the system's data rendering it inaccessible to the user until they paid the ransom.
-     \item How does this relate?
-       \begin{itemize}
-       \item[CIA:] This is largely an integrity issue and the only way to save yourself from permanent loss is to pay the ransom.
-       \item[STRIDE:] WannaCry is threat of data tampering.
-       \end{itemize}
-     \item Wikipedia: \href{https://en.wikipedia.org/wiki/WannaCry_ransomware_attack}{WannaCry}
-     \end{enumerate}
-   \item Operation Payback
-     \begin{enumerate}[label=\alph*.]
-     \item A group of hacktivists in response to events they were not happy with recent events used a stress testing application to take control of a voluntary botnet and conduct a series of coordinated DDoS attacks.
-     \item How does this relate?
-       \begin{itemize}
-       \item[CIA:] This attack directly hinders the availability of services provided by the victims of these attacks.
-       \item[STRIDE:] This is a was a Threat to denial of service.
-       \end{itemize}
-     \item Wikipedia: \href{https://en.wikipedia.org/wiki/Operation_Payback}{Operation Payback}
-     \end{enumerate}
-   \end{enumerate}
+   
 
  \end{response}
  \noindent\rule{7in}{2.8pt}
 
  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
- % Problem 2
+ % Problem B
  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
- \begin{problem}{2} 
+ \begin{problem}{B} 
+   Hands On: Vigenère Ciphers\\
+   As a ``warmup'' to C programming, we will have some fun and implement a simple form of encryption called Vigenère Ciphers. In addition to a C refresh, the goal is to explore the challenge of letter frequency in particular, and patterns in particular, for simple encryption algorithms.
 
-   Draw an attack tree that describes a cheating student obtaining the answers to another studentâ€™s homework.  Include all paths you can think of.  You may do this electronically, or draw on paper then take a picture with your phone.
+   \begin{enumerate}[label=\arabic*.]
+   \item
+     What are the frequencies of the letters in the plaintext? Write a C program that reads in text from a file into a buffer, counts the occurrences of each [lowercase] letter of the English alphabet, and computes the relative frequencies. Your program should print out the contents of the buffer, and the frequency results in a simple list such as the one above.
+   \item
+     Add a function to encrypt the plaintext with a Vigenère cipher and a given key. You should add the key as a command line argument so that you can enter a different key each time you run. A key is a text string of max length 4, min length 1.
+   \item
+    Add the functionality to count the occurrences of each [lowercase] letter of the English alphabet in the ciphertext, compute the relative frequencies, and print out the ciphertext and the frequency results in a simple list.
+  \item
+    Run your encryption program over the plaintext for two different keys: yz and wxyz.
+  \item
+    Submit a table of your results, First column is the alphabet, second is the relative frequency of each, 3rd column is frequency from plaintext, 4th column is frequency from key yz, and 5th column is frequency from key wxyz.
+  \item
+    what happens to your program if the text in your file is too long to fit in the buffer? If you try to enter a key with length 5?
+    
  \end{problem}
 
  \begin{response}
-   Homework cheating attack tree \\
-   \img{Threat-tree}{Homework attack tree}
+
  \end{response}
  \noindent\rule{7in}{2.8pt}
  \end{document}
