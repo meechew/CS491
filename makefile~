@@ -1,0 +1,5 @@
+V_Cipher: V_Cipher.c
+	gcc V_Cipher.c -Wall V_Cipher
+
+clean:
+	-rm V_Cipher
