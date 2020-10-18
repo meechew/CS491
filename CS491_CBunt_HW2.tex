@@ -100,12 +100,19 @@
      \item[Private Key]
        is a symmetric encryption method. This means the same key is used for both encryption and decryption. Symmetric encrtption is typocally used for encrypting local data storage such as a zip file where the same user will be accessing and manipulating the encypted data.
      \item[Public Key]
-       is an asymmetric encryption method. This means there are to encryption keys. One used encryption and a differnt for decryption. Asymmetric encryption is typocally used for encrypting communications where unone user will be generating and encypting the data and a differnt user will be decrupting and reading the data. 
-   \item
+       is an asymmetric encryption method. This means there are to encryption keys. One used encryption and a differnt for decryption. Asymmetric encryption is typocally used for encrypting communications where unone user will be generating and encypting the data and a differnt user will be decrupting and reading the data.
+     \end{itemize}
      
-   \end{eumerate}
-        
-
+   \item
+     Given a key with 64 bits:
+     \begin{enumerate}[label=\alph*.]
+     \item
+       A 64-bit key would $2^64$ brute-fource attempts before an exhaustive key search can be completed.
+     \item
+       The weakest super computer listed on the TOP500 list is rated at $1225 TFlop/s$ so even the weakest computer could exahstivly trial all possible keys in $2.7$ days making 64-keys an unwise length for any form of secure encryption.
+       
+     \end{itemize}         
+   \end{eumerate}      
  \end{response}
  \noindent\rule{7in}{2.8pt}
 
@@ -113,14 +120,14 @@
  % Problem B
  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
  \begin{problem}{B} 
-   Hands On: Vigenère Ciphers\\
-   As a ``warmup'' to C programming, we will have some fun and implement a simple form of encryption called Vigenère Ciphers. In addition to a C refresh, the goal is to explore the challenge of letter frequency in particular, and patterns in particular, for simple encryption algorithms.
+   Hands On: VigenÃ¨re Ciphers\\
+   As a ``warmup'' to C programming, we will have some fun and implement a simple form of encryption called VigenÃ¨re Ciphers. In addition to a C refresh, the goal is to explore the challenge of letter frequency in particular, and patterns in particular, for simple encryption algorithms.
 
    \begin{enumerate}[label=\arabic*.]
    \item
      What are the frequencies of the letters in the plaintext? Write a C program that reads in text from a file into a buffer, counts the occurrences of each [lowercase] letter of the English alphabet, and computes the relative frequencies. Your program should print out the contents of the buffer, and the frequency results in a simple list such as the one above.
    \item
-     Add a function to encrypt the plaintext with a Vigenère cipher and a given key. You should add the key as a command line argument so that you can enter a different key each time you run. A key is a text string of max length 4, min length 1.
+     Add a function to encrypt the plaintext with a VigenÃ¨re cipher and a given key. You should add the key as a command line argument so that you can enter a different key each time you run. A key is a text string of max length 4, min length 1.
    \item
     Add the functionality to count the occurrences of each [lowercase] letter of the English alphabet in the ciphertext, compute the relative frequencies, and print out the ciphertext and the frequency results in a simple list.
   \item
