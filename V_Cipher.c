@@ -1,9 +1,47 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 
-int alph[26] = {0};
 char *cipher;
 char *DATA;
+
+void encrypt(char* txt, char* key) {
+  ulong Ksz = strlen(key), Csz = strlen(txt);
+
+  for(int k = 0; k < Csz; ++k) {
+    if(txt[k] == '\n')
+      continue;
+    txt[k] +=  key[k%Ksz] - '`';
+    if(txt[k] > 'z')
+      txt[k] -= 26;
+    if(txt[k] < 0)
+      txt[k] += 230;
+  }
+}
+
+void decrypt(char* txt, char* key) {
+  ulong Ksz = strlen(key), Csz = strlen(txt);
+
+  for(int k = 0; k < Csz; ++k) {
+    if(txt[k] == '\n')
+      continue;
+    txt[k] -=  key[k%Ksz] - '`';
+    if(txt[k] < 'a')
+      txt[k] += 26;
+  }
+}
+
+void CharUsage(char* str, int len) {
+  int alph[26] = {0};
+  for (int k = 0; k < len; ++k) {
+    if(str[k] < 'a') continue;
+    alph[str[k] - 'a']++;
+  }
+  printf("\nLetter usage:\n");
+  for(int k = 0;k <  26; ++k) {
+    printf("%c: %.3f%%\n", k + 65, (float)(alph[k] * 100)/len);
+  }
+}
 
 int main(int argc, char* argv[]){
   if(argc < 3) {
@@ -33,16 +71,22 @@ int main(int argc, char* argv[]){
   for(int k = 0; k < sz; ++k) {
     c = fgetc(fp);
     DATA[k] = c;
-    if(c < 97) continue;
-    alph[c - 97]++;
-  }
-
-  printf("\nPlaintext: \n%s\n", DATA);
-  printf("\nLetter usage:\n");
-  for(int k = 0;k <  26; ++k) {
-    printf("%c: %.3f%%\n", k + 65, (float)(alph[k] * 100)/sz);
   }
   fclose(fp);
+
+  //Print data
+  printf("\nPlaintext: \n%s\n", DATA);
+  CharUsage(DATA, sz);
+
+  //encrypt the plain text with the provided key
+  encrypt(DATA, cipher);
+  printf("\nEncrypted text: \n%s\n", DATA);
+  CharUsage(DATA, sz);
+
+  //decrypt the encrypted text with the provided key
+  decrypt(DATA, cipher);
+  printf("\nPlaintext: \n%s\n", DATA);
+
   free(DATA);
   return 0;
 }
