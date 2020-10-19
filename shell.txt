@@ -1,0 +1,259 @@
+Welcome to the Emacs shell
+
+/mnt/d/CS_Projects/CS491 $ ./V_Cipher ./crypt.txt yz
+A: 
+B: 
+C: 
+D: 
+E: 
+F: 
+G: 
+H: 
+I: 
+J: 
+K: 
+L: 
+M: 
+N: 
+O: 
+P: 
+Q: 
+R: 
+S: 
+T: 
+U: 
+V: 
+W: 
+X: 
+Y: 
+Z: 
+
+Plaintext: 
+ethicslawanduniversitypoliciestodefendasystemyouneedtobeabletothinklikeanatta
+ckerandthatincludesunderstandingtechniquesthatcanbeusedtocompromisesecurityho
+weverusingthosetechniquesintherealworldmayviolatethelawandtheuniversityscompu
+tingpracticesormaybeunethicalyoumustrespecttheprivacyandpropertyrightsofother
+satalltimesorelseyouwillfailthecourseundersomecircumstancesevenprobingforweak
+nessesmayresultinseverepenaltiesuptoandincludingcivilfinesexpulsionandjailtim
+ecarefullyreadthecomputerfraudandabuseactcfaaafederalstatutethatbroadlycrimin
+alizescomputerintrusionsthisisjustoneofseverallawsthatgovernhackingunderstand
+whatthelawprohibitsyoudontwanttoenduplikethisguyifindoubticanreferyoutoanatto
+rneypleasereviewcaenspolicydocumentonrightsandresponsibilitiesforguidelinesco
+ncerninguseoftechnologyresourcesatpsuasmembersoftheuniversityyouarerequiredto
+adheretothesepolicies
+
+
+Letter usage:
+064 	7.273%
+011 	1.250%
+037 	4.205%
+031 	3.523%
+109 	12.386%
+015 	1.705%
+013 	1.477%
+030 	3.409%
+068 	7.727%
+002 	0.227%
+006 	0.682%
+037 	4.205%
+018 	2.045%
+061 	6.932%
+056 	6.364%
+021 	2.386%
+003 	0.341%
+054 	6.136%
+064 	7.273%
+077 	8.750%
+044 	5.000%
+012 	1.364%
+011 	1.250%
+001 	0.114%
+022 	2.500%
+001 	0.114%
+
+Encrypted text: 
+dtgibskavamdtnhvdrrisyookibidssoceeemdzsxsselynumeddsoaezbkesoshhnjlhkdamastz
+bkdrznctgasimckucerumddrrtzncimgsebhmipudsshztbambdurectncnmornmhsdsdctrhtxhn
+veuequrimgshnsdtdcgnhqterimtgeqezlvoqlcmzyuinlztdtgekavamdshdumiueqshtxsbolpt
+simgorzcsiberoqmzyaetndtgibakynulurtqerpdcstgeorhvzcxamdornpdrsyqifhssnfntgeq
+rasaklsileroqeksdynuvikleahlshdcnuqsdumddrrolebiqctmrtznbereuempqoaimgeoqwdaj
+mersdslaxrdstlsimsdvdrdpdnzlsidstpsozncimckucimgbiuikfhndsdxoukshomamdiahlsil
+dczrdftlkyqezdshdcnmouseqfqatdzncaaurezcsceazaeeceqakssasuseshztarnaclxcqilim
+zlhzdsbolpttdrhnsrtshomsshhshsiurtnndoesdvdrzlkavsshztfoueqngabkhnfumddrrtznc
+vhztshdlzwornhhbhtrynucomtvamtsodncuolhkdtgirgtyhfhncotbsibamrdfdrxottnamastn
+qndyoldareqeuidwbadnrpnlhcxdnctmdnsomrhggtramdqerpnnriaikisidseoqgticekimercn
+mcdrmimgtsdoetdcgnnlngxrdsnuqcdsztostarmdmaeqsnfshdumiueqshtxynuzrdrdqtiqectn
+zdgeqesoshdsdpnlhcher
+
+
+Letter usage:
+041 	4.659%
+019 	2.159%
+039 	4.432%
+077 	8.750%
+054 	6.136%
+010 	1.136%
+023 	2.614%
+045 	5.114%
+042 	4.773%
+002 	0.227%
+021 	2.386%
+029 	3.295%
+047 	5.341%
+054 	6.136%
+036 	4.091%
+011 	1.250%
+030 	3.409%
+054 	6.136%
+079 	8.977%
+054 	6.136%
+032 	3.636%
+012 	1.364%
+003 	0.341%
+011 	1.250%
+012 	1.364%
+031 	3.523%
+
+Plaintext: 
+ethicslawanduniversitypoliciestodefendasystemyouneedtobeabletothinklikeanatta
+ckerandthatincludesunderstandingtechniquesthatcanbeusedtocompromisesecurityho
+weverusingthosetechniquesintherealworldmayviolatethelawandtheuniversityscompu
+tingpracticesormaybeunethicalyoumustrespecttheprivacyandpropertyrightsofother
+satalltimesorelseyouwillfailthecourseundersomecircumstancesevenprobingforweak
+nessesmayresultinseverepenaltiesuptoandincludingcivilfinesexpulsionandjailtim
+ecarefullyreadthecomputerfraudandabuseactcfaaafederalstatutethatbroadlycrimin
+alizescomputerintrusionsthisisjustoneofseverallawsthatgovernhackingunderstand
+whatthelawprohibitsyoudontwanttoenduplikethisguyifindoubticanreferyoutoanatto
+rneypleasereviewcaenspolicydocumentonrightsandresponsibilitiesforguidelinesco
+ncerninguseoftechnologyresourcesatpsuasmembersoftheuniversityyouarerequiredto
+adheretothesepolicies
+
+/mnt/d/CS_Projects/CS491 $ ./V_Cipher ./crypt.txt wxyz
+A: 
+B: 
+C: 
+D: 
+E: 
+F: 
+G: 
+H: 
+I: 
+J: 
+K: 
+L: 
+M: 
+N: 
+O: 
+P: 
+Q: 
+R: 
+S: 
+T: 
+U: 
+V: 
+W: 
+X: 
+Y: 
+Z: 
+
+Plaintext: 
+ethicslawanduniversitypoliciestodefendasystemyouneedtobeabletothinklikeanatta
+ckerandthatincludesunderstandingtechniquesthatcanbeusedtocompromisesecurityho
+weverusingthosetechniquesintherealworldmayviolatethelawandtheuniversityscompu
+tingpracticesormaybeunethicalyoumustrespecttheprivacyandpropertyrightsofother
+satalltimesorelseyouwillfailthecourseundersomecircumstancesevenprobingforweak
+nessesmayresultinseverepenaltiesuptoandincludingcivilfinesexpulsionandjailtim
+ecarefullyreadthecomputerfraudandabuseactcfaaafederalstatutethatbroadlycrimin
+alizescomputerintrusionsthisisjustoneofseverallawsthatgovernhackingunderstand
+whatthelawprohibitsyoudontwanttoenduplikethisguyifindoubticanreferyoutoanatto
+rneypleasereviewcaenspolicydocumentonrightsandresponsibilitiesforguidelinesco
+ncerninguseoftechnologyresourcesatpsuasmembersoftheuniversityyouarerequiredto
+adheretothesepolicies
+
+
+Letter usage:
+064 	7.273%
+011 	1.250%
+037 	4.205%
+031 	3.523%
+109 	12.386%
+015 	1.705%
+013 	1.477%
+030 	3.409%
+068 	7.727%
+002 	0.227%
+006 	0.682%
+037 	4.205%
+018 	2.045%
+061 	6.932%
+056 	6.364%
+021 	2.386%
+003 	0.341%
+054 	6.136%
+064 	7.273%
+077 	8.750%
+044 	5.000%
+012 	1.364%
+011 	1.250%
+001 	0.114%
+022 	2.500%
+001 	0.114%
+
+Encrypted text: 
+brgizqkatymdrlhvbpriqwooigbibqsoaceekbzsvqsejwnukcddqmaexzkeqmshfljlfidakystx
+bkbpznargaqgmciscepsmdbprtxlcikesezfminsdsqfztzymbbsrearnclkorlkhsbqdcrphtvfn
+tcueosrikeshlqdtbagnfotepgmtecqexjvoojcmxwuiljztbrgeiyvakbshbsmiscqsfrxszmlpr
+sikeorxasizcrookzyyctnbrgizykylsluprqepndcqrgemphvxaxakborlndrqwqidfssldntecq
+pysaijsijcroocksbwnutgklcyhlqfdclsqsbsmdbprojcbioatmprznzcrescmpomaikeeooudah
+mepqdsjyxrbqtlqgmsbtdrbndnxjsibqtpqmznagmciscikebisgkffldsbvouiqhokymdgyhlqgl
+bazrbdtliwqexbshbanmmsseodqarbznayaupczcqaeaxyeeacqaiqsaqsseqfztypnaajxcoglik
+zlfxdszmlprrdrflsrrqhokqshfqhsgsrtlldocqdvbpzliyvsqfztdmueolgazihndsmdbprtxlc
+tfztqfdlxuorlfhbfrrylscokrvakrsoblcumjhkbrgipetyfdhnamtbqgbakpdfbpxorrnakystl
+qnbwolbyreocuibubablrpljhcvbncrkdnqmmrfegtpymdocrpllriygkiqgdscmqgrgceigmepan
+kadrkgmgrqdocrdcelnllexrbqnuoadsxrosryrmbkaeoqnfqfdukgueoqhtvwnuxpdrbotiocctl
+zdecqeqmshbqdpljhcfcr
+
+
+Letter usage:
+039 	4.432%
+050 	5.682%
+045 	5.114%
+043 	4.886%
+042 	4.773%
+026 	2.955%
+029 	3.295%
+023 	2.614%
+036 	4.091%
+014 	1.591%
+034 	3.864%
+045 	5.114%
+036 	4.091%
+029 	3.295%
+040 	4.545%
+030 	3.409%
+052 	5.909%
+059 	6.705%
+057 	6.477%
+031 	3.523%
+017 	1.932%
+012 	1.364%
+008 	0.909%
+021 	2.386%
+024 	2.727%
+026 	2.955%
+
+Plaintext: 
+ethicslawanduniversitypoliciestodefendasystemyouneedtobeabletothinklikeanatta
+ckerandthatincludesunderstandingtechniquesthatcanbeusedtocompromisesecurityho
+weverusingthosetechniquesintherealworldmayviolatethelawandtheuniversityscompu
+tingpracticesormaybeunethicalyoumustrespecttheprivacyandpropertyrightsofother
+satalltimesorelseyouwillfailthecourseundersomecircumstancesevenprobingforweak
+nessesmayresultinseverepenaltiesuptoandincludingcivilfinesexpulsionandjailtim
+ecarefullyreadthecomputerfraudandabuseactcfaaafederalstatutethatbroadlycrimin
+alizescomputerintrusionsthisisjustoneofseverallawsthatgovernhackingunderstand
+whatthelawprohibitsyoudontwanttoenduplikethisguyifindoubticanreferyoutoanatto
+rneypleasereviewcaenspolicydocumentonrightsandresponsibilitiesforguidelinesco
+ncerninguseoftechnologyresourcesatpsuasmembersoftheuniversityyouarerequiredto
+adheretothesepolicies
+
+/mnt/d/CS_Projects/CS491 $ 

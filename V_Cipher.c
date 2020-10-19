@@ -39,7 +39,7 @@ void CharUsage(char* str, int len) {
   }
   printf("\nLetter usage:\n");
   for(int k = 0;k <  26; ++k) {
-    printf("%c: %.3f%%\n", k + 65, (float)(alph[k] * 100)/len);
+    printf("%03d \t%.3f%%\n", alph[k], (float)(alph[k] * 100)/len);
   }
 }
 
@@ -74,6 +74,10 @@ int main(int argc, char* argv[]){
   }
   fclose(fp);
 
+  for (int k = 'A'; k <= 'Z'; ++k) {
+    printf("%c: \n", k);
+  }
+  
   //Print data
   printf("\nPlaintext: \n%s\n", DATA);
   CharUsage(DATA, sz);
