@@ -81,38 +81,26 @@
    Written Exercises \\
    \begin{enumerate}[label=\arabic*.]
    \item
-     What is the difference between private and public key cryptography? For each, give one scenario where we might use it today.
-     
+     Define: Race condition     
    \item
-     Given a key with 64 bits:
-     \begin{enumerate}[label=\alph*.]  
-     \item
-       how many trials of exhaustive search must be done before success is expected?
-     \item
-       Assume each exhaustive search trial requires a total of 16 floating point operations. Is a 64 bit key length a reasonable choice given today's most powerful supercomputer?
-     \end{enumerate}
+     Define: Atpmic operation
+   \item
+     Define: Impact surface
+   \item
+     Dectribe the attack surface for the Linuc Lab machies in CS.
    \end{enumerate}
  \end{problem}
 
  \begin{response}
    \begin{enumerate}[label=\arabic*.]
    \item
-     Private Key vs. Public Key Cryptography
-     \begin{itemize}
-     \item[Private Key]
-       is a symmetric encryption method. This means the same key is used for both encryption and decryption. Symmetric encrtption is typocally used for encrypting local data storage such as a zip file where the same user will be accessing and manipulating the encypted data.
-     \item[Public Key]
-       is an asymmetric encryption method. This means there are to encryption keys. One used encryption and a differnt for decryption. Asymmetric encryption is typocally used for encrypting communications where unone user will be generating and encypting the data and a differnt user will be decrupting and reading the data.
-     \end{itemize}
      
    \item
-     Given a key with 64 bits:
-     \begin{enumerate}[label=\alph*.]
-     \item
-       A 64-bit key would $2^{64}$ brute-fource attempts before an exhaustive key search can be completed.
-     \item
-       The weakest super computer listed on the TOP500 list is rated at $1225 TFlop/s$ so even the weakest computer could exahstivly trial all possible keys in $2.7$ days making 64-keys an unwise length for any form of secure encryption.
-     \end{enumerate}             
+
+   \item
+
+   \item
+     
    \end{enumerate}      
  \end{response}
  \noindent\rule{7in}{2.8pt}
@@ -121,8 +109,7 @@
  % Problem B
  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
  \begin{problem}{B} 
-   Hands On: Vigenère Ciphers\\
-   As a ``warmup'' to C programming, we will have some fun and implement a simple form of encryption called Vigenère Ciphers. In addition to a C refresh, the goal is to explore the challenge of letter frequency in particular, and patterns in particular, for simple encryption algorithms.
+   Hands On: Linux/C/C++\\
 
    \begin{enumerate}[label=\arabic*.]
    \item
