@@ -83,22 +83,22 @@
    \item
      Define: Race condition     
    \item
-     Define: Atpmic operation
+     Define: Atomic operation
    \item
      Define: Impact surface
    \item
-     Dectribe the attack surface for the Linuc Lab machies in CS.
+     Dectribe the attack surface for the Linux Lab machies in CS.
    \end{enumerate}
  \end{problem}
 
  \begin{response}
    \begin{enumerate}[label=\arabic*.]
    \item
-     
+     \bf{Race condition}: When 2 threads are attempting to access data at the same time and there is no way to guarantee which will get to it first.
    \item
-
+     \bf{Atomic operation}: an operation that is compleated in a single process cycle.
    \item
-
+     \bf{Impact surface}: 
    \item
      
    \end{enumerate}      
@@ -113,139 +113,41 @@
 
    \begin{enumerate}[label=\arabic*.]
    \item
-     What are the frequencies of the letters in the plaintext? Write a C program that reads in text from a file into a buffer, counts the occurrences of each [lowercase] letter of the English alphabet, and computes the relative frequencies. Your program should print out the contents of the buffer, and the frequency results in a simple list such as the one above.
+     Submit an 8-by-8 table of the conversion effects of in C or C++ of data types.
    \item
-     Add a function to encrypt the plaintext with a Vigenère cipher and a given key. You should add the key as a command line argument so that you can enter a different key each time you run. A key is a text string of max length 4, min length 1.
+     Provide one example of exploitable code for each of integer overflow and integer underflow. 
    \item
-    Add the functionality to count the occurrences of each [lowercase] letter of the English alphabet in the ciphertext, compute the relative frequencies, and print out the ciphertext and the frequency results in a simple list.
-  \item
-    Run your encryption program over the plaintext for two different keys: yz and wxyz.
-  \item
-    Submit a table of your results, First column is the alphabet, second is the relative frequency of each, 3rd column is frequency from plaintext, 4th column is frequency from key yz, and 5th column is frequency from key wxyz.
-  \item
-    what happens to your program if the text in your file is too long to fit in the buffer? If you try to enter a key with length 5?
+     write a C/C++ program with a buffer overflow vulnerability.
+      
   \end{enumerate}
-  
 \end{problem}
 
 \begin{response}
-  Vigenère Ciphers output:\\
-  
-  \begin{lstlisting}[multicols=4]
-    Letter
-    A:
-    B:
-    C:
-    D:
-    E:
-    F:
-    G:
-    H:
-    I:
-    J:
-    K:
-    L:
-    M:
-    N:
-    O:
-    P:
-    Q:
-    R:
-    S:
-    T:
-    U:
-    V:
-    W:
-    X:
-    Y:
-    Z:
-
-    Plaintext:
-    064 7.273%
-    011 1.250%
-    037 4.205%
-    031 3.523%
-    109 12.386%
-    015 1.705%
-    013 1.477%
-    030 3.409%
-    068 7.727%
-    002 0.227%
-    006 0.682%
-    037 4.205%
-    018 2.045%
-    061 6.932%
-    056 6.364%
-    021 2.386%
-    003 0.341%
-    054 6.136%
-    064 7.273%
-    077 8.750%
-    044 5.000%
-    012 1.364%
-    011 1.250%
-    001 0.114%
-    022 2.500%
-    001 0.114%
-
-    Key - "yz":
-    041 4.659%
-    019 2.159%
-    039 4.432%
-    077 8.750%
-    054 6.136%
-    010 1.136%
-    023 2.614%
-    045 5.114%
-    042 4.773%
-    002 0.227%
-    021 2.386%
-    029 3.295%
-    047 5.341%
-    054 6.136%
-    036 4.091%
-    011 1.250%
-    030 3.409%
-    054 6.136%
-    079 8.977%
-    054 6.136%
-    032 3.636%
-    012 1.364%
-    003 0.341%
-    011 1.250%
-    012 1.364%
-    031 3.523%
-
-    Key - "wxyz":
-    039 4.432%
-    050 5.682%
-    045 5.114%
-    043 4.886%
-    042 4.773%
-    026 2.955%
-    029 3.295%
-    023 2.614%
-    036 4.091%
-    014 1.591%
-    034 3.864%
-    045 5.114%
-    036 4.091%
-    029 3.295%
-    040 4.545%
-    030 3.409%
-    052 5.909%
-    059 6.705%
-    057 6.477%
-    031 3.523%
-    017 1.932%
-    012 1.364%
-    008 0.909%
-    021 2.386%
-    024 2.727%
-    026 2.955%
-    
-  \end{lstlisting}
-  
+  \begin{enumerate}[label=\arabic*.]
+  \item
+    C/C++ conversions
+    \begin{table}[]
+      \caption{Data Type Conversions \\\bf{Key:} \\sign-extended(SEXT) \\zero-extended(ZEXT) \\same width(SWID)
+                                     \\truncated(TRNC) \\value changed(VC) \\value preserved(VP)
+                                     \\bit-pattern changed(BC) \\bit-pattern preserved(BP)}
+      \label{tab:Conversions}
+      \begin{tabular}{|l|l|l|l|l|l|l|l|l|}
+        \hline
+                 & s-char     & u-char     & s-short    & u-short    & s-int      & u-int      & s-long     & u-long    \\ \hline
+        s-char   & SWID BP VP & SWID BP VC & ZEXT BC VP & ZEXT BC VC & ZEXT BC VP & ZEXT BC VC & ZEXT BC VP & ZEXT BC VC\\ \hline
+        u-char   & SWID BP VC & SWID BP VP & SEXT BC VP & SEXT BC VP & SEXT BC VP & SEXT BC VP & SEXT BC VP & SEXT BC VP\\ \hline
+        s-short  & TRNC BP VC & TRNC BP VC & SWID BP VP & SWID BP VC & ZEXT BC VP & ZEXT BC VC & ZEXT BC VP & ZEXT BC VC\\ \hline
+        u-short  & TRNC BP VC & TRNC BP VC & SWID BP VC & SWID BP VP & SEXT BC VP & SEXT BC VP & SEXT BC VP & SEXT BC VP\\ \hline
+        s-int    & TRNC BP VC & TRNC BP VC & TRNC BP VC & TRNC BP VC & SWID BP VP & SWID BP VC & ZEXT BC VP & ZEXT BC VC\\ \hline
+        u-int    & TRNC BP VC & TRNC BP VC & TRNC BP VC & TRNC BP VC & SWID BP VC & SWID BP VP & SEXT BC VP & SEXT BC VP\\ \hline
+        s-long   & TRNC BP VC & TRNC BP VC & TRNC BP VC & TRNC BP VC & TRNC BP VC & TRNC BP VC & SWID BP VP & SWID BP VC\\ \hline
+        u-long   & TRNC BP VC & TRNC BP VC & TRNC BP VC & TRNC BP VC & TRNC BP VC & TRNC BP VC & SWID BP VC & SWID BP VP\\ \hline
+      \end{tabular}
+      \end{table}
+  \item
+    Integer overflow
+  \item
+    Buffer overflow
 \end{response}
 \noindent\rule{7in}{2.8pt}
 \end{document}
