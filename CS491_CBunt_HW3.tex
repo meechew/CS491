@@ -1,0 +1,264 @@
+% Carl Bunt
+% CS491
+% Homework 3
+\documentclass[a4paper, 11pt]{article}
+\usepackage{comment} % enables the use of multi-line comments (\ifx \fi)
+\usepackage{lipsum} %This package just generates Lorem Ipsum filler text.
+\usepackage{fullpage} % changes the margin
+\usepackage[a4paper, total={7in, 10in}]{geometry}
+\usepackage[fleqn]{amsmath}
+\usepackage{amssymb,amsthm}  % assumes amsmath package installed
+\newtheorem{theorem}{Theorem}
+\newtheorem{corollary}{Corollary}
+\usepackage{graphicx}
+\usepackage{tikz}
+\usetikzlibrary{arrows}
+\usepackage{verbatim}
+\usepackage{float}
+\usepackage{tikz}
+\usepackage{listings}
+\usepackage{multicol}
+\usetikzlibrary{shapes,arrows}
+\usetikzlibrary{arrows,calc,positioning}
+
+\tikzset{
+  block/.style = {draw, rectangle,
+    minimum height=1cm,
+    minimum width=1.5cm},
+  input/.style = {coordinate,node distance=1cm},
+  output/.style = {coordinate,node distance=4cm},
+  arrow/.style={draw, -latex,node distance=2cm},
+  pinstyle/.style = {pin edge={latex-, black,node distance=2cm}},
+  sum/.style = {draw, circle, node distance=1cm},
+}
+\usepackage{xcolor}
+\usepackage{mdframed}
+\usepackage[shortlabels]{enumitem}
+\usepackage{indentfirst}
+\usepackage{hyperref}
+\hypersetup{
+  colorlinks=true,
+  linkcolor=red,
+  filecolor=green,
+  urlcolor=blue,
+  }
+\renewcommand{\thesubsection}{\thesection.\alph{subsection}}
+
+\newenvironment{problem}[2][Question]
+               { \begin{mdframed}[backgroundcolor=gray!20] \textbf{#1 #2:} \\}
+               {   \end{mdframed}}
+
+ % Define solution environment
+ \newenvironment{response}
+                {\textit{Response:}}
+                {}
+
+ \graphicspath{{./images/}{IR}}
+ \newcommand*{\img}[2]{
+   \begin{figure}[!ht]
+     \flushleft
+     \includegraphics[width=0.8\linewidth]{#1.JPG}
+     \caption{\bf #2}
+     \label{fig:#1}
+ \end{figure}}
+                
+ \renewcommand{\qed}{\quad\qedsymbol}
+ %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+ \begin{document}
+ % Header-Make sure you update this information!!!!
+ \noindent
+ %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+ \large\textbf{Carl Bunt} \hfill \textbf{Homework - 3}   \\
+ Email: cbunt@psu.edu \hfill ID: 915910838 \\
+ \normalsize Course: CS 491 - Intro to Security \hfill Term: Fall 2020\\
+ Instructor: Dr. Karen L. Karavanic \hfill Due Date: 09 NOV 20\\
+ \noindent\rule{7in}{2.8pt}
+
+ %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+ % Problem A
+ %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+ \begin{problem}{A}
+   Written Exercises \\
+   \begin{enumerate}[label=\arabic*.]
+   \item
+     What is the difference between private and public key cryptography? For each, give one scenario where we might use it today.
+     
+   \item
+     Given a key with 64 bits:
+     \begin{enumerate}[label=\alph*.]  
+     \item
+       how many trials of exhaustive search must be done before success is expected?
+     \item
+       Assume each exhaustive search trial requires a total of 16 floating point operations. Is a 64 bit key length a reasonable choice given today's most powerful supercomputer?
+     \end{enumerate}
+   \end{enumerate}
+ \end{problem}
+
+ \begin{response}
+   \begin{enumerate}[label=\arabic*.]
+   \item
+     Private Key vs. Public Key Cryptography
+     \begin{itemize}
+     \item[Private Key]
+       is a symmetric encryption method. This means the same key is used for both encryption and decryption. Symmetric encrtption is typocally used for encrypting local data storage such as a zip file where the same user will be accessing and manipulating the encypted data.
+     \item[Public Key]
+       is an asymmetric encryption method. This means there are to encryption keys. One used encryption and a differnt for decryption. Asymmetric encryption is typocally used for encrypting communications where unone user will be generating and encypting the data and a differnt user will be decrupting and reading the data.
+     \end{itemize}
+     
+   \item
+     Given a key with 64 bits:
+     \begin{enumerate}[label=\alph*.]
+     \item
+       A 64-bit key would $2^{64}$ brute-fource attempts before an exhaustive key search can be completed.
+     \item
+       The weakest super computer listed on the TOP500 list is rated at $1225 TFlop/s$ so even the weakest computer could exahstivly trial all possible keys in $2.7$ days making 64-keys an unwise length for any form of secure encryption.
+     \end{enumerate}             
+   \end{enumerate}      
+ \end{response}
+ \noindent\rule{7in}{2.8pt}
+
+ %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+ % Problem B
+ %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+ \begin{problem}{B} 
+   Hands On: Vigenère Ciphers\\
+   As a ``warmup'' to C programming, we will have some fun and implement a simple form of encryption called Vigenère Ciphers. In addition to a C refresh, the goal is to explore the challenge of letter frequency in particular, and patterns in particular, for simple encryption algorithms.
+
+   \begin{enumerate}[label=\arabic*.]
+   \item
+     What are the frequencies of the letters in the plaintext? Write a C program that reads in text from a file into a buffer, counts the occurrences of each [lowercase] letter of the English alphabet, and computes the relative frequencies. Your program should print out the contents of the buffer, and the frequency results in a simple list such as the one above.
+   \item
+     Add a function to encrypt the plaintext with a Vigenère cipher and a given key. You should add the key as a command line argument so that you can enter a different key each time you run. A key is a text string of max length 4, min length 1.
+   \item
+    Add the functionality to count the occurrences of each [lowercase] letter of the English alphabet in the ciphertext, compute the relative frequencies, and print out the ciphertext and the frequency results in a simple list.
+  \item
+    Run your encryption program over the plaintext for two different keys: yz and wxyz.
+  \item
+    Submit a table of your results, First column is the alphabet, second is the relative frequency of each, 3rd column is frequency from plaintext, 4th column is frequency from key yz, and 5th column is frequency from key wxyz.
+  \item
+    what happens to your program if the text in your file is too long to fit in the buffer? If you try to enter a key with length 5?
+  \end{enumerate}
+  
+\end{problem}
+
+\begin{response}
+  Vigenère Ciphers output:\\
+  
+  \begin{lstlisting}[multicols=4]
+    Letter
+    A:
+    B:
+    C:
+    D:
+    E:
+    F:
+    G:
+    H:
+    I:
+    J:
+    K:
+    L:
+    M:
+    N:
+    O:
+    P:
+    Q:
+    R:
+    S:
+    T:
+    U:
+    V:
+    W:
+    X:
+    Y:
+    Z:
+
+    Plaintext:
+    064 7.273%
+    011 1.250%
+    037 4.205%
+    031 3.523%
+    109 12.386%
+    015 1.705%
+    013 1.477%
+    030 3.409%
+    068 7.727%
+    002 0.227%
+    006 0.682%
+    037 4.205%
+    018 2.045%
+    061 6.932%
+    056 6.364%
+    021 2.386%
+    003 0.341%
+    054 6.136%
+    064 7.273%
+    077 8.750%
+    044 5.000%
+    012 1.364%
+    011 1.250%
+    001 0.114%
+    022 2.500%
+    001 0.114%
+
+    Key - "yz":
+    041 4.659%
+    019 2.159%
+    039 4.432%
+    077 8.750%
+    054 6.136%
+    010 1.136%
+    023 2.614%
+    045 5.114%
+    042 4.773%
+    002 0.227%
+    021 2.386%
+    029 3.295%
+    047 5.341%
+    054 6.136%
+    036 4.091%
+    011 1.250%
+    030 3.409%
+    054 6.136%
+    079 8.977%
+    054 6.136%
+    032 3.636%
+    012 1.364%
+    003 0.341%
+    011 1.250%
+    012 1.364%
+    031 3.523%
+
+    Key - "wxyz":
+    039 4.432%
+    050 5.682%
+    045 5.114%
+    043 4.886%
+    042 4.773%
+    026 2.955%
+    029 3.295%
+    023 2.614%
+    036 4.091%
+    014 1.591%
+    034 3.864%
+    045 5.114%
+    036 4.091%
+    029 3.295%
+    040 4.545%
+    030 3.409%
+    052 5.909%
+    059 6.705%
+    057 6.477%
+    031 3.523%
+    017 1.932%
+    012 1.364%
+    008 0.909%
+    021 2.386%
+    024 2.727%
+    026 2.955%
+    
+  \end{lstlisting}
+  
+\end{response}
+\noindent\rule{7in}{2.8pt}
+\end{document}
