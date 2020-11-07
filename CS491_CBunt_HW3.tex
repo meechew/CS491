@@ -96,11 +96,19 @@
    \item
      \bf{Race condition}: When 2 threads are attempting to access data at the same time and there is no way to guarantee which will get to it first.
    \item
-     \bf{Atomic operation}: an operation that is compleated in a single process cycle.
+     \bf{Atomic operation}: An operation that is compleated in a single process cycle.
    \item
-     \bf{Impact surface}: 
+     \bf{Impact surface}: The collection all events that happen as a result of a successful exploit.
    \item
-     
+     \bf{Linux Lab attack surface}: The three most obvious attack vectors I can think of are:
+     \begin{itemize}
+     \item[Physical security]
+       A nefarious actor may obtian physical access to the system to steal physical system to access private data.
+     \item[Network access]
+       A nefarious actor may either on local network or on across the internet send commands to invoke maliscous code.
+     \item[User ignorance]
+       A User may fall victim of a phishing scheme or introduce an infected file to the system.
+     \end{itemize}  
    \end{enumerate}      
  \end{response}
  \noindent\rule{7in}{2.8pt}
