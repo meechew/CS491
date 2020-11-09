@@ -1,18 +1,22 @@
 #include <stdio.h>
 #include <stdint.h>
 #include <stdlib.h>
+#include <string.h>
 
-int16_t SHIRT_VAL = 20;
+uint16_t SHIRT_VAL = 20;
 
 
 int main(int argc, char *argv[]) {
-  if(argc < 2) {
-    printf("usage: UnderFlow <Shirt count>\n");
+  if(argc < 3) {
+    printf("usage: BufferOverFlow <Item count> <Order name>\n");
     exit(EXIT_FAILURE);
   }
-  int16_t count = atoi(argv[1]);
-  int16_t Val = SHIRT_VAL * (count * (-1));
+  char Customer[8];
+  uint16_t count = atoi(argv[1]);
+  uint16_t Val = SHIRT_VAL * count;
 
+  strcpy(Customer, (argv[2]));
+  
   
   printf("Total: %d\n", Val);
 
