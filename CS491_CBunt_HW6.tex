@@ -1,0 +1,77 @@
+% Carl Bunt
+% CS491
+% Homework 6
+
+
+\documentclass[11pt]{book}
+\usepackage{amsmath}
+\usepackage{amstext}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{color}
+\usepackage{bbm}
+\usepackage[utf8]{inputenc}
+\graphicspath{{./images/}{IR}}
+\newcommand{\ptitle}{IntroSec HW6}
+\newcommand{\name}{Carl Bunt}
+\newcommand{\class}{CS491 - Intro to Security}
+\newcommand{\school}{Portland State University}
+\newcommand{\prof}{Prof Karen Karavanic}
+\newcommand{\Date}{04 DEC 2020}
+\setlength\parindent{24pt}
+\newcommand{\indt}{\hspace\parindent}
+\begingroup
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhead{}
+\lhead{\class}
+\chead{\ptitle}
+\rhead{\name}
+\newcommand*{\titleGM}{\begingroup
+  \hbox{
+    \hspace*{0.2\textwidth}
+    \rule{1pt}{\textheight}
+    \hspace*{0.05\textwidth}
+    \parbox[b]{0.75\textwidth}{
+      {\noindent\Huge\bfseries \ptitle \\}\\[2\baselineskip]
+      {\large \textit{\textbf{Name:} \name  \ \ \ \textbf{Class:} \class \ \ \ \newline}}
+      \\[\baselineskip]
+        {\large \textsc{\prof}}
+        \newline \vspace{0.5\textheight}
+                 {\noindent \newline \Date \newline \school}}}
+  \endgroup}
+\newcommand*{\img}[2]{
+  \begin{figure}[!ht]
+    \flushleft
+    \includegraphics[width=0.8\linewidth]{#1.JPG}
+    \caption{\bf #2}
+    \label{fig:#1}
+\end{figure}}
+
+\thispagestyle{empty}
+\titleGM
+
+\begin{document}
+\newpage
+
+
+\subsection*{Target 01:}
+\indent When decompiled I found {\tt movl   \$0xe032e6e,-0x4(\%ebp)} just before it was compared with {\tt \%eax} which was the hex of {\bf 235089518}.
+
+\img{Attack01}{Attack01: Success}
+
+
+\subsection*{Target 02:}
+\indent When decompiled I found {\tt cmp    \%eax,0x8(\%ebp)}. The val in {\tt \%eax} at that is struction was {\bf 1410972340}.
+
+\img{Attack02}{Attack02: Success}
+
+
+\subsection*{Target 03:}
+\indent When decompiled I found {\tt cmpl   \$0x33d78596,-0xc(\%ebp)}. I needed to overflow the char[16] buffer and the 4 int32 so I pushed 20 {\tt A}'s then {\tt 0x96}, {\tt 0x85}, {\tt 0xD7}, {\tt 0x33} to writ the value into {\tt x}.
+
+\img{Attack03}{Attack03: Success}
+
+
+\end{document}
